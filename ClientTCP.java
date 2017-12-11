@@ -1,3 +1,5 @@
+package epn.edu.ec;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,28 +9,23 @@ import java.net.Socket;
 import javax.swing.JOptionPane;
 
 /**
- * Trivial TCP client.
+ * Clase Cliente TCP.
  */
 public class ClientTCP {
 
+	// Creación de una variable estática con el puerto de escucha
 	
 	private static int SERVER_PORT = 9090;
 	
-	/**
-     * Runs the client as an application.  First it displays a dialog
-     * box asking for the IP address or hostname of a host running
-     * the server, then connects to it and displays the message that
-     * it serves.
-     */
-	
 	public static void main(String[] args) throws IOException {
         
-		//Se crea la varaiable 'out' que permitira el envio del mensaje al servidor
+		//Se crea la varaiable que permitire el envio del mensaje al servidor
 		PrintWriter out;
+		//pedimos la ip del servidor
 		String serverAddress = JOptionPane.showInputDialog("Enter IP Address of a machine that is\n" +
             							   "running the date service on port "+SERVER_PORT+":");
 		
-		//Se pide los dos valores para la suma
+		//ingreso de dos número por pantalla
 		String a = JOptionPane.showInputDialog("Ingrese el primer valor de la suma: ");
 		String b = JOptionPane.showInputDialog("Ingrese el segundo valor de la suma: ");
 		
@@ -50,7 +47,7 @@ public class ClientTCP {
 		String answer = input.readLine();
 
 		//Imprime los datos del mensaje
-		JOptionPane.showMessageDialog(null, "Respuesta de la suma "+ a + " + " + b + " = " + answer);
+		JOptionPane.showMessageDialog(null, "La suma de "+ a + " + " + b + " = " + answer);
 		System.exit(0);
     }
 	
